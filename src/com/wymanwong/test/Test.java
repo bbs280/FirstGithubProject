@@ -1,13 +1,15 @@
 package com.wymanwong.test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.wymanwong.domain.Name;
-import com.wymanwong.domain.News;
-import com.wymanwong.domain.Student;
+import com.wymanwong.domain.Person;
+import com.wymanwong.domain.PersonName;
 
 public class Test {
 	@SuppressWarnings("deprecation")
@@ -34,44 +36,28 @@ public class Test {
 	}
 
 	private static void saveData(Session s, Transaction t) {
-		// User user = new User();
-		// user.setUsername("wyman");
-		// user.setPassword("123456");
+		// Name name = new Name("王伟文", "wyman");
+		// Student stu = new Student();
+		// stu.setStudentNo("AP1005608");
+		// stu.setAddress("珠海斗门12");
+		// stu.setName(name);
+		// stu.setMoblie("13427283922");
 
-		// News news = new News();
-		// news.setTitle("吃什么好呢？");
-		// news.setContent("吃香蕉");
+		Person person = new Person();
+		person.setAge(26);
+		PersonName personName = new PersonName("大明", "BIG");
+		Map<String, Integer> power = new HashMap<String, Integer>();
+		power.put("sammi1", 10);
+		power.put("sammi2", 20);
+		personName.setPower(power);
+		person.setPersonName(personName);
 
-		// Person person = new Person();
-		// person.setName(new Name("王伟文", "wyman"));
-		// List<String> l = new ArrayList<String>();
-		// l.add("1");
-		// l.add("2");
-		// person.setSchoolLists(l);
-		// SortedSet<String> set = new TreeSet<String>();
-		// set.add("c");
-		// set.add("a");
-		// set.add("b");
-		// person.setSchoolSets(set);
-		// person.setSchoolCollections(l);
-		//
-		// Map<String, Float> scores = new HashMap<String, Float>();
-		// scores.put("物理", 90f);
-		// person.setScores(scores);
-
-		Student stu = new Student();
-		stu.setStudentNo("AP1005608");
-		stu.setAddress("珠海斗门");
-		stu.setName(new Name("王伟文", "wyman"));
-		stu.setMoblie("13427283922");
-
-		s.save(stu);
+		s.save(person);
 		t.commit();
 	}
 
 	@SuppressWarnings("unused")
 	private static void findData(Session s, Transaction t) {
-		News news = (News) s.get(News.class, 1L);
-		System.out.println(news.toString());
+
 	}
 }

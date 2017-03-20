@@ -19,5 +19,6 @@
 
 		<mapping resource="com/wymanwong/domain/Entity.hbm.xml" />
 		<mapping class="com.wymanwong.domain.Student" />
+		<mapping class="com.wymanwong.domain.Name" />
 	</session-factory>
 </hibernate-configuration>

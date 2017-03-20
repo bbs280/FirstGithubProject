@@ -1,13 +1,21 @@
 package com.wymanwong.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "name")
 public class Name extends BaseEntity {
 
 	private static final long serialVersionUID = -8262773743815332820L;
 
+	@Column(name = "name_cn")
 	private String nameCn;
-	private String nameEn;
-	private Person person;
 
+	@Column(name = "name_en")
+	private String nameEn;
+	
 	public Name() {
 	}
 
@@ -24,20 +32,12 @@ public class Name extends BaseEntity {
 		return nameEn;
 	}
 
-	public Person getPerson() {
-		return person;
-	}
-
 	public void setNameCn(String nameCn) {
 		this.nameCn = nameCn;
 	}
 
 	public void setNameEn(String nameEn) {
 		this.nameEn = nameEn;
-	}
-
-	public void setPerson(Person person) {
-		this.person = person;
 	}
 
 }

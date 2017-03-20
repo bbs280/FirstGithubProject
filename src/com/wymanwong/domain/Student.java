@@ -1,5 +1,6 @@
 package com.wymanwong.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,8 +19,8 @@ public class Student extends BaseEntity {
 	@Size(max = 20)
 	private String studentNo;
 
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "name")
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "name_id")
 	private Name name;
 
 	@Column(name = "moblie")
