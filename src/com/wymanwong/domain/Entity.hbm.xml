@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        '-//Hibernate/Hibernate Mapping DTD 3.0//EN'  
+        'http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd'>
+<hibernate-mapping package="com.wymanwong.domain">
+	<class name="User" table="user">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<property name="username" not-null="true" />
+		<property name="password" not-null="true" />
+	</class>
+
+	<class name="News" table="news">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<property name="title" not-null="true" />
+		<property name="content" />
+		<property name="fullContent" column="full_content"
+			formula="(select concat(news.title, news.content) from news where id = id)" />
+	</class>
+
+	<class name="Person" table="person">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<component name="name" class="Name" unique="true">
+			<property name="person" />
+			<property name="nameCn" />
+			<property name="nameEn" />
+		</component>
+		<property name="age" type="integer" />
+		<list name="schoolLists" table="person_school_list">
+			<key column="person_id" not-null="true" />
+			<list-index column="list_order" />
+			<element type="string" column="school_name" />
+		</list>
+		<set name="schoolSets" table="person_school_set" sort="natural"
+			order-by="person_school_set desc">
+			<key column="person_id" />
+			<element type="string" column="school_name" />
+		</set>
+
+		<bag name="schoolCollections" table="person_school_collection">
+			<key column="person_id" not-null="true" />
+			<element type="string" column="school_name" />
+		</bag>
+
+		<map name="scores" table="person_scores" lazy="true">
+			<key column="person_id" />
+			<map-key column="subject" type="string" />
+			<element column="grade" type="float" />
+		</map>
+	</class>
+
+</hibernate-mapping>
