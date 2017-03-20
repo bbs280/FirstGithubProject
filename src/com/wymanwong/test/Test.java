@@ -48,11 +48,11 @@ public class Test {
 		// user.setPassword("123456");
 
 		// News news = new News();
-		// news.setTitle("³ÔÊ²Ã´ºÃÄØ£¿");
-		// news.setContent("³ÔÏã½¶");
+		// news.setTitle("åƒä»€ä¹ˆå¥½å‘¢ï¼Ÿ");
+		// news.setContent("åƒé¦™è•‰");
 
 		// Person person = new Person();
-		// person.setName(new Name("»ÆÎ°ÎÄ", "wyman"));
+		// person.setName(new Name("é»„ä¼Ÿæ–‡", "wyman"));
 		// List<String> l = new ArrayList<String>();
 		// l.add("1");
 		// l.add("2");
@@ -65,13 +65,13 @@ public class Test {
 		// person.setSchoolCollections(l);
 		//
 		// Map<String, Float> scores = new HashMap<String, Float>();
-		// scores.put("ÎïÀí", 90f);
+		// scores.put("ç‰©ç†", 90f);
 		// person.setScores(scores);
 
 		Student stu = new Student();
 		stu.setStudentNo("AP1005608");
-		stu.setAddress("ÌìÀÊº£·å");
-		stu.setName(new Name("»ÆÎ°ÎÄ", " wyman"));
+		stu.setAddress("");
+		stu.setName(new Name(", " wyman"));
 		stu.setMoblie("13750361151");
 
 		s.save(stu);
