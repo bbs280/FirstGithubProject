@@ -71,7 +71,7 @@ public class Test {
 		Student stu = new Student();
 		stu.setStudentNo("AP1005608");
 		stu.setAddress("珠海斗门");
-		stu.setName(new Name("王伟文" wyman"));
+		stu.setName(new Name("王伟文", "wyman"));
 		stu.setMoblie("13427283922");
 
 		s.save(stu);
