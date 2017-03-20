@@ -1,14 +1,5 @@
 package com.wymanwong.test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -16,12 +7,12 @@ import org.hibernate.cfg.Configuration;
 
 import com.wymanwong.domain.Name;
 import com.wymanwong.domain.News;
-import com.wymanwong.domain.Person;
 import com.wymanwong.domain.Student;
 
 public class Test {
-
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
+
 		SessionFactory sf = new Configuration().configure()
 				.buildSessionFactory();
 
@@ -78,6 +69,7 @@ public class Test {
 		t.commit();
 	}
 
+	@SuppressWarnings("unused")
 	private static void findData(Session s, Transaction t) {
 		News news = (News) s.get(News.class, 1L);
 		System.out.println(news.toString());
