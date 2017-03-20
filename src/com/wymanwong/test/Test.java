@@ -52,7 +52,7 @@ public class Test {
 		// news.setContent("吃香蕉");
 
 		// Person person = new Person();
-		// person.setName(new Name("黄伟文", "wyman"));
+		// person.setName(new Name("王伟文", "wyman"));
 		// List<String> l = new ArrayList<String>();
 		// l.add("1");
 		// l.add("2");
@@ -70,8 +70,8 @@ public class Test {
 
 		Student stu = new Student();
 		stu.setStudentNo("AP1005608");
-		stu.setAddress("");
-		stu.setName(new Name(", " wyman"));
+		stu.setAddress("珠海斗门");
+		stu.setName(new Name("王伟文" wyman"));
 		stu.setMoblie("13750361151");
 
 		s.save(stu);
